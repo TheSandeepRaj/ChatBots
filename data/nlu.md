@@ -20,22 +20,21 @@
 - kati bajyoo?
 
 ## intent: find_time_zone_for_location
-- what is the time zone of Kathmandu?
-- time zone of Kathmandu
-- do you know the time zone of Nepal
-- i need to know time zone of Mumbai
-- tell me time zone of india
-- kathmandu time zone
-- what is the time in China
+- what is the time zone of [Kathmandu](city)?
+- time zone of [Kathmandu]
+- do you know the time zone of [Nepal](city)
+- i need to know time zone of [Mumbai](city)
+- tell me time zone of [india](city)
+- [London](city)
 
 ## intent:city_info
-- Nepal
-- Kathmandu
-- Dilhi
-- Mumbai
-- Nawalpur
-- Nawalparasi
-- India
+- [Nepal](city)
+- [Kathmandu](city)
+- [Dilhi](city)
+- [Mumbai](city)
+- [Nawalpur](city)
+- [Nawalparasi](city)
+- [India](city)
 
 ## intent:thanks
 - thanks
