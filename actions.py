@@ -7,21 +7,37 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+
+#will use API later
+#values might be incorrect since this is just a test
+timezone = {
+    "London": "UTC+1:10"
+    "Nepal": "UTC+5:45"
+    "India": "UTC+5:30"
+}
+
+
+class ActioShowTimeZame(Action):
+
+    def name(self) -> Text:
+        return "action_show_time_zone"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        city = tracker.get_slot("city")
+        timezone = timezones.get(city)
+
+        if timezone is None:
+            output = "Sorry! Could not find the time zone of {}.".format(city)
+        else:
+            output: 'Time zone of {} is {}.'.format(city,timezone)
+            
+        dispatcher.utter_message(text=output)
+
+        return []

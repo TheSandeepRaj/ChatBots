@@ -8,18 +8,25 @@ intents:
 
 entities:
   - city
-responses:
+
+slots:
+  city:
+    type: text
+    auto_fill: True
+    
+
+esponses:
   utter_greet:
   - text: "Hey! I'm time zone bot."
 
   utter_ask_location:
-  -text: "Which city do you need the time zone of?"
+  - text: "Which city do you need the time zone of?"
   
   utter_finding_time_zone:
-  -text: 'Okay, give me a sec...'
+  - text: "Okay, give me a sec...\n Loking for time zone of {city}."
   
   utter_you_are_welcome:   
-  -text: 'You are welcome!'
+  - text: "You are welcome!"
 
   utter_goodbye:
   - text: "Bye"
